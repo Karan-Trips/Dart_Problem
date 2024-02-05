@@ -1,2 +1,1 @@
-# Dart_Problem
-Basic dart problems solution
+--------- Day wise Dart Practice problem -------------
