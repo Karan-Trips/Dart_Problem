@@ -21,7 +21,7 @@ void main() {
     print("Apple not there in list.");
   }
   try {
-    print("Banana at first =${lst.firstWhere((i) => i == "banana")}");
+    print("Banana at first =${lst.lastWhere((i) => i == "banana")}");
     print("Index = ${lst.indexOf("banana")}");
   } catch (e) {
     print("Banana  not there in list.");

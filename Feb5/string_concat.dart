@@ -4,6 +4,8 @@
 import 'dart:io';
 
 void main() {
+
+
   List<String> lst = [];
   for (var i = 0; i < 3; i++) {
     stdout.write("Enter the fruits = ");
@@ -16,5 +18,7 @@ void main() {
 }
 
 String concat(List<String> lst) {
-  return lst.fold("", (previousValue, element) => previousValue + element);
+  return lst
+      .fold("", (previousValue, element) => previousValue + element)
+      .replaceAll(" ", "");
 }
