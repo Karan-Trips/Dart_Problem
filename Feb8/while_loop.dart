@@ -1,7 +1,7 @@
 void main() {
   int i = 1;
-  while (i <= 10) {
+  do {
     print("Number $i");
     i++;
-  }
+  } while (i <= 10);
 }

@@ -1,9 +1,11 @@
 enum BookStatus { available, checkedOut, reserved }
 
 class Book {
-  int? id;
-  String? title;
+  int id;
+  String title;
   BookStatus? status;
+  String? borrower;
+  Book(this.id, this.title, this.status);
 
   void checkStatus(String name) {
     switch (status) {
@@ -55,17 +57,13 @@ class Library {
 }
 
 void main() {
-  Book b = Book();
-  b.id = 101;
-  b.title = "RAmayan";
-  b.status = BookStatus.available;
+  Book b = Book(101, "RAmayan", BookStatus.available);
+
   b.checkStatus("karan");
   Library library = Library();
   library.addBook(b);
-  Book b1 = Book();
-  b1.id = 201;
-  b1.title = "setu";
-  b1.status = BookStatus.reserved;
+  Book b1 = Book(201, "setu", BookStatus.reserved);
+
   b1.checkStatus("op");
   library.addBook(b1);
   library.display();

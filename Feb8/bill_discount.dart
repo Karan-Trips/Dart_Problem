@@ -2,12 +2,12 @@ import 'dart:io';
 
 void main() {
   print("enter the Amount= ");
-  int amt = int.parse(stdin.readLineSync()!);
-  if (amt > 100) {
-    double tot = amt - (amt * 5 / 100);
-    print(tot);
+  int amount = int.parse(stdin.readLineSync()!);
+  if (amount > 100) {
+    double total = amount - (amount * 5 / 100);
+    print(total);
   } else {
-    double tot = amt - (amt * 10 / 100);
-    print(tot);
+    double total = amount - (amount * 10 / 100);
+    print(total);
   }
 }
