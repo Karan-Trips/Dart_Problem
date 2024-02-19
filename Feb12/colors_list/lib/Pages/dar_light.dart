@@ -1,5 +1,4 @@
-import 'package:colors_list/Pdf_file/pdf_handling.dart';
-import 'package:colors_list/Pdf_file/pdf_invice.dart';
+import 'package:colors_list/Pages/api_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -15,10 +14,12 @@ class DarkLight extends StatefulWidget {
 class _DarkLightState extends State<DarkLight> {
   bool _isDarkMode = false;
   int change = 0;
+  int no = 0;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.orange),
       darkTheme: ThemeData.dark(),
       themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
@@ -26,21 +27,7 @@ class _DarkLightState extends State<DarkLight> {
         bottomNavigationBar: GNav(
             backgroundColor: Colors.black,
             onTabChange: (value) {
-              switch (value) {
-                case 0:
-                  debugPrint("0");
-                  break;
-                case 1:
-                  debugPrint("1");
-                  break;
-                case 2:
-                  debugPrint("2");
-                  break;
-                case 3:
-                  debugPrint("3");
-                  break;
-                default:
-              }
+              // ColoumnColors();
             },
             rippleColor: Colors.grey,
             hoverColor: Colors.blueGrey,
@@ -48,9 +35,7 @@ class _DarkLightState extends State<DarkLight> {
             tabBorderRadius: 10,
             tabActiveBorder: Border.all(color: Colors.black, width: 1),
             tabBorder: Border.all(color: Colors.grey, width: 1),
-            tabShadow: [
-              BoxShadow(color: Colors.grey.withOpacity(0.5), blurRadius: 8)
-            ],
+            tabShadow: [BoxShadow(color: Colors.red.withOpacity(0.5))],
             curve: Curves.easeOutExpo,
             duration: const Duration(milliseconds: 9),
             gap: 8,
@@ -144,29 +129,110 @@ class _DarkLightState extends State<DarkLight> {
               const SizedBox(
                 height: 35,
               ),
-              SizedBox(
-                child: ElevatedButton(
-                  onPressed: () async {
-                    Fluttertoast.showToast(
-                        msg: "Saved",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.CENTER,
-                        timeInSecForIosWeb: 1,
-                        backgroundColor: Colors.red,
-                        textColor: Colors.white,
-                        fontSize: 16.0);
+              ElevatedButton(
+                onPressed: () async {
+                  Fluttertoast.showToast(
+                      msg: "Open API ",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.CENTER,
+                      timeInSecForIosWeb: 2,
+                      backgroundColor: Colors.green,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const ApiPage())));
 
-                    // final pdfFile = await PdfInvoiceApi.generate();
+                  // final pdfFile = await PdfInvoiceApi.generate();
 
-                    // opening the pdf file
-                    // FileHandleApi.openFile(pdfFile);
-                    // print("pdf ....");
-                  },
-                  child: Text("PDF"),
+                  // opening the pdf file
+                  // FileHandleApi.openFile(pdfFile);
+                  // print("pdf ....");
+                },
+                child: const Text(
+                  "API Page",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.red,
+                    ),
+                    child: IconButton(
+                      icon: const Icon(Icons.remove),
+                      onPressed: () {
+                        setState(() {
+                          if (no <= 0) {
+                            debugPrint("No cannot be negative");
+                          } else {
+                            no--;
+                          }
+                        });
+                      },
+                      color: Colors.black,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: SizedBox(
+                        child: Text(
+                      "$no",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.red,
+                    ),
+                    child: IconButton(
+                      icon: const Icon(Icons.add),
+                      onPressed: () {
+                        setState(() {
+                          no++;
+                        });
+                      },
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 30),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.red,
+                ),
+                child: IconButton(
+                  icon: const Icon(Icons.restore_outlined),
+                  onPressed: () {
+                    setState(() {
+                      no = 0;
+                    });
+                  },
+                  color: Colors.black,
+                ),
+              ),
             ],
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              no += 10;
+            });
+          },
+          child: const Text("ADD 10"),
         ),
       ),
     );

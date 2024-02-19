@@ -1,9 +1,9 @@
 import 'dart:io';
 
 void main() {
-  // print("ENter the mobile num=");
-  // int phno = int.parse(stdin.readLineSync()!);
-  // print(phno.Validation() ? "isvalid" : "not valid");
+  print("ENter the mobile num=");
+  int phno = int.parse(stdin.readLineSync()!);
+  print(phno.Validation() ? "isvalid" : "not valid");
   // print("it is valid phone number");
   // print(phno.runtimeType);
   print("Enter the first name = ");
