@@ -54,7 +54,7 @@ class _DarkLightState extends State<DarkLight> {
                 text: 'Likes',
               ),
               GButton(
-                icon: FontAwesomeIcons.magnifyingGlass,
+                icon: Icons.abc,
                 text: 'Search',
               ),
               GButton(

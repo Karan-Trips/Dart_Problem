@@ -1,8 +1,8 @@
-import 'package:colors_list/Stack/pages/DesignEight.dart';
-import 'package:colors_list/Stack/pages/DesignFIve.dart';
-import 'package:colors_list/Stack/pages/DesignFirst.dart';
-import 'package:colors_list/Stack/pages/DesignSix.dart';
-import 'package:colors_list/Stack/pages/DesignTwo.dart';
+import 'package:colors_list/Stack/pages/stackeight.dart';
+import 'package:colors_list/Stack/pages/stackfive.dart';
+import 'package:colors_list/Stack/pages/stackffirstt.dart';
+import 'package:colors_list/Stack/pages/stacksix.dart';
+import 'package:colors_list/Stack/pages/stacktwo.dart';
 import 'package:colors_list/Stack/pages/Stacksecondpage.dart';
 import 'package:colors_list/Stack/pages/stackfirst.dart';
 import 'package:colors_list/Stack/pages/stacksecond.dart';
