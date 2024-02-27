@@ -1,3 +1,4 @@
+import 'package:colors_list/Coloumn_pages/Pageofbottom/bottomfive.dart';
 import 'package:colors_list/Coloumn_pages/coloumn_pages.dart';
 import 'package:colors_list/CustomeAppBar/custome_appbar.dart';
 import 'package:colors_list/DropDownpage/dropdown_page.dart';
@@ -5,6 +6,8 @@ import 'package:colors_list/GridViewpage/gridView_main.dart';
 import 'package:colors_list/Pages/Buttons/custom_buttom.dart';
 import 'package:colors_list/Pages/task_4.dart';
 import 'package:colors_list/PlayStoreDesign/play_store.dart';
+import 'package:colors_list/Stack/stack_mainpage.dart';
+import 'package:colors_list/Stagggerd%20grid/staggerd_girdview.dart';
 
 import 'package:colors_list/appbar/appbar_1.dart';
 import 'package:flutter/material.dart';
@@ -22,9 +25,11 @@ void main() {
     theme: ThemeData(useMaterial3: true),
     debugShowCheckedModeBanner: false,
     // home: StaggerdGrid(),
-    // home: SecondGridview(),
-    // home: const ThirdGridView(),
-    home: CustomeAppbar(),
+    // home: const SecondGridview(), //Green grid view   <========
+    // home: const ThirdGridView(),// blue grid View <=======
+    // home: const StackMainPage(), //Design  <========
+    // home: const MainScreenTask(), //Its MAIN SCREEN   <====================
+    home: const CustomeAppbar(), //Custom tab Bar  <====================
   ));
 }
 

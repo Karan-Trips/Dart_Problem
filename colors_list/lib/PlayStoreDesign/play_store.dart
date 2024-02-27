@@ -1,8 +1,6 @@
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:colors_list/PlayStoreDesign/class.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 class PlayStoreDesign extends StatefulWidget {
   const PlayStoreDesign({super.key});
@@ -14,7 +12,9 @@ class PlayStoreDesign extends StatefulWidget {
 class _PlayStoreDesignState extends State<PlayStoreDesign> {
   Widget _catagories() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -25,7 +25,7 @@ class _PlayStoreDesignState extends State<PlayStoreDesign> {
           TextButton(
               onPressed: () {
                 setState(() {
-                  print("see all");
+                  debugPrint("see all");
                 });
               },
               child: const Text(
@@ -42,7 +42,9 @@ class _PlayStoreDesignState extends State<PlayStoreDesign> {
 
   Widget apps() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -53,7 +55,7 @@ class _PlayStoreDesignState extends State<PlayStoreDesign> {
           TextButton(
               onPressed: () {
                 setState(() {
-                  print("see all");
+                  debugPrint("see all");
                 });
               },
               child: const Text(
@@ -118,14 +120,13 @@ class _PlayStoreDesignState extends State<PlayStoreDesign> {
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 2),
                 autoPlayAnimationDuration: const Duration(milliseconds: 700),
-                autoPlayCurve:
-                    Curves.bounceOut, //aur change kar aniamtion ke liye
+                autoPlayCurve: Curves
+                    .bounceOut, //to change the animation style <------------
                 enlargeCenterPage: true,
               ),
               itemBuilder: (context, index, i) {
                 return Container(
                   width: double.infinity,
-                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
                   decoration: BoxDecoration(
                     color: Colors.red[200],
                     borderRadius: BorderRadius.circular(8),
@@ -149,58 +150,62 @@ class _PlayStoreDesignState extends State<PlayStoreDesign> {
                 );
               },
             ),
-            const Divider(),
             _catagories(),
             Column(
               children: [
                 SizedBox(
-                  height: 250,
+                  height: 205,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return Container(
-                        height: 250,
-                        margin: const EdgeInsets.all(5),
-                        width: 220,
+                        margin: const EdgeInsets.only(left: 11),
                         decoration: BoxDecoration(
-                          // color: Colors.redAccent,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius: BorderRadius.circular(7),
                               child: Image.asset(
                                 app[index].imageUrl,
-                                width: 195,
-                                height: 180,
+                                width: 200,
+                                height: 150,
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            const SizedBox(height: 8),
-                            Container(
-                              alignment: Alignment.topLeft,
-                              margin: const EdgeInsets.only(left: 28),
-                              child: Text(
-                                app[index].name,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  color: Colors.black54,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 1),
-                            Container(
-                              alignment: Alignment.topLeft,
-                              margin: const EdgeInsets.only(left: 35),
-                              child: Text(
-                                app[index].type,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                  color: Colors.black54,
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0, top: 5),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    app[index].name,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    app[index].type,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15,
+                                      // color: Colors.black,
+                                    ),
+                                  ),
+                                  // const Text(
+                                  //   "\$32",
+                                  //   style: TextStyle(
+                                  //     fontWeight: FontWeight.w400,
+                                  //     fontSize: 15,
+                                  //     // color: Colors.black,
+                                  //   ),
+                                  // ),
+                                ],
                               ),
                             ),
                           ],
@@ -222,59 +227,64 @@ class _PlayStoreDesignState extends State<PlayStoreDesign> {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return Container(
-                        height: 250,
-                        margin: const EdgeInsets.all(5),
-                        width: 220,
-                        decoration: BoxDecoration(
-                          // color: Colors.redAccent,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
+                        margin: const EdgeInsets.only(left: 15),
+                        // decoration: BoxDecoration(
+                        //   borderRadius: BorderRadius.circular(7),
+                        // ),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius: BorderRadius.circular(7),
                               child: Image.network(
                                 games[index].imageUrl,
-                                width: 195,
-                                height: 180,
+                                width: 200,
+                                height: 150,
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            const SizedBox(height: 8),
-                            Container(
-                              alignment: Alignment.topLeft,
-                              margin: const EdgeInsets.only(left: 28),
-                              child: Text(
-                                games[index].name,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  color: Colors.black54,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 1),
-                            Container(
-                              alignment: Alignment.topLeft,
-                              margin: const EdgeInsets.only(left: 35),
-                              child: Row(
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Text(
+                                    games[index].name,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
                                   Text(
                                     games[index].type,
                                     style: const TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12,
-                                      color: Colors.black54,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15,
                                     ),
                                   ),
-                                  const Gap(10),
-                                  Text(
-                                    " \$${games[index].descrip}",
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12,
-                                      color: Colors.black54,
-                                    ),
+                                  // const SizedBox(height: 4),
+                                  Row(
+                                    children: [
+                                      const Text(
+                                        "\$23",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 4),
+                                      Text(
+                                        "(${games[index].descrip})",
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),

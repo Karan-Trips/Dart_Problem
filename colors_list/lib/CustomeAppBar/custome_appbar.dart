@@ -1,5 +1,6 @@
 import 'package:colors_list/CustomeAppBar/custom_tabbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class CustomeAppbar extends StatelessWidget {
   const CustomeAppbar({super.key});
@@ -13,8 +14,10 @@ class CustomeAppbar extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
               child: const Icon(Icons.navigate_next_outlined),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CustomTabBar()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CustomTabBar()));
               }),
           appBar: AppBar(
             backgroundColor: Colors.black26,
@@ -30,24 +33,6 @@ class CustomeAppbar extends StatelessWidget {
               Icons.menu,
             ),
           ),
-          // toolbarHeight: 70,
-          // flexibleSpace: Container(
-          //   decoration: const BoxDecoration(
-          //     color: Colors.orange,
-          //     borderRadius: BorderRadius.only(
-          //         bottomLeft: Radius.circular(25),
-          //         bottomRight: Radius.circular(25)),
-          //   ),
-          //   child: const Column(
-          //     mainAxisAlignment: MainAxisAlignment.end,
-          //     children: [
-          //       Center(
-          //           child: Text('One',
-          //               style: TextStyle(fontSize: 30, color: Colors.white))),
-          //     ],
-          //   ),
-          // ),
-
           body: Column(
             children: [
               const SizedBox(
@@ -58,28 +43,26 @@ class CustomeAppbar extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              Container(
+                color: Colors.blue,
                 height: 50,
-                child: AppBar(
-                  backgroundColor: Colors.blue,
-                  bottom: const TabBar(
-                    indicatorColor: Colors.white,
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    tabs: [
-                      Tab(
-                        icon: Icon(
-                          Icons.directions_bike,
-                          color: Colors.white,
-                        ),
+                child: const TabBar(
+                  indicatorColor: Colors.white,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  tabs: [
+                    Tab(
+                      icon: Icon(
+                        Icons.directions_bike,
+                        color: Colors.white,
                       ),
-                      Tab(
-                        icon: Icon(
-                          Icons.directions_car,
-                          color: Colors.white,
-                        ),
+                    ),
+                    Tab(
+                      icon: Icon(
+                        Icons.directions_car,
+                        color: Colors.white,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               Expanded(

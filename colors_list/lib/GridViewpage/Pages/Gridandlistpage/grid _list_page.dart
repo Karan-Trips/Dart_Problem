@@ -3,6 +3,7 @@
 import 'package:colors_list/GridViewpage/Pages/Gridandlistpage/class_of_listgrid.dart';
 import 'package:colors_list/GridViewpage/Pages/Gridandlistpage/menu_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class GridandListPage extends StatelessWidget {
   ListAndGridView lg = ListAndGridView();
@@ -29,25 +30,27 @@ class GridandListPage extends StatelessWidget {
           ),
         ),
         body: TabBarView(children: [
-          GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-              ),
-              itemCount: 20,
-              itemBuilder: (BuildContext context, int index) {
-                return Card(
-                    color: Colors.white70,
-                    elevation: 8,
-                    child: Column(children: <Widget>[
-                      Text(
-                        "${lg.title} ${index + 1}",
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16),
-                      ),
-                      Text(lg.subtitle),
-                    ]));
-              }),
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: GridView.builder(
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, mainAxisSpacing: 7, crossAxisSpacing: 7),
+                itemCount: 20,
+                itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                      color: Colors.white70,
+                      elevation: 1,
+                      child: Column(children: <Widget>[
+                        Text(
+                          "${lg.title} ${index + 1}",
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        Text(lg.subtitle),
+                      ]));
+                }),
+          ),
           ListView.builder(
               itemBuilder: (context, index) {
                 return Card(
@@ -70,14 +73,13 @@ class GridandListPage extends StatelessWidget {
                 );
               },
               itemCount: 20),
-          
         ]),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Menupage()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const Menupage()));
           },
-          child: Icon(Icons.arrow_circle_right_outlined),
+          child: const Icon(Icons.arrow_circle_right_outlined),
         ),
       ),
     );

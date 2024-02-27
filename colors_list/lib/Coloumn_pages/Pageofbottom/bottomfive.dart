@@ -9,7 +9,7 @@ class BottomRowColumFive extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Flexible(
+          const Flexible(
               child: Center(
             child: Text('Colors'),
           )),
@@ -25,7 +25,7 @@ class BottomRowColumFive extends StatelessWidget {
                   )),
                 ],
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundColor: Colors.purpleAccent,
                 radius: 50,
                 child: Text("|\n|\n|\n|"),
@@ -42,11 +42,9 @@ class BottomRowColumFive extends StatelessWidget {
               ),
             ],
           ),
-          Flexible(
-              child: Container(
-            child: Center(
-              child: Text('What is your favorite Color?'),
-            ),
+          const Flexible(
+              child: Center(
+            child: Text('What is your favorite Color?'),
           )),
         ],
       ),

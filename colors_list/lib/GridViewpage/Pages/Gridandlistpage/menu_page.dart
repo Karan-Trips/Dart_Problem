@@ -1,5 +1,4 @@
 import 'package:colors_list/GridViewpage/Pages/Gridandlistpage/catagories.dart';
-import 'package:colors_list/GridViewpage/Pages/Gridandlistpage/trypage.dart';
 import 'package:flutter/material.dart';
 
 class Menupage extends StatefulWidget {
@@ -44,10 +43,12 @@ class _MenupageState extends State<Menupage> {
                             fit: BoxFit.fill)),
                     height: 250,
                   ),
-                  const SizedBox(
-                    width: 320,
-                    child: Text(
-                        "Rice asda sd asd asd as das das d\nasdjuahsgdjags\nasdushdghaisudhas"),
+                  Container(
+                    margin: const EdgeInsets.only(left: 20, bottom: 10),
+
+                    // width: 200,
+                    child: const Text(
+                        "Rice asda sd asd asd as das das d  asdasdjuahsgdjags asdushdghaisu Ricedjuahsgdjags dhas"),
                   ),
                   Container(
                     margin: const EdgeInsets.all(10),
@@ -59,10 +60,12 @@ class _MenupageState extends State<Menupage> {
                             fit: BoxFit.fill)),
                     height: 250,
                   ),
-                  const SizedBox(
-                    width: 320,
-                    child: Text(
-                        "Wheate asda sd asd asd as das das d\nasdjuahsgdjags\nasdushdghaisudhas"),
+                  Container(
+                    margin: const EdgeInsets.only(left: 20, bottom: 10),
+
+                    // width: 200,
+                    child: const Text(
+                        "Wheat asda sd asd asd as das das d  asdasdjuahsgdjags asdushdghaisu Wheat djuahsgdjags dhas"),
                   ),
                 ],
               ),

@@ -17,8 +17,8 @@ class _SecondGridviewState extends State<SecondGridview> {
       ),
       body: StaggeredGrid.count(
         crossAxisCount: 4,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10,
+        mainAxisSpacing: 5,
+        crossAxisSpacing: 5,
         children: [
           StaggeredGridTile.count(
             crossAxisCellCount: 2,

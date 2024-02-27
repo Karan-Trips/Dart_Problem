@@ -18,8 +18,8 @@ class _ThirdGridViewState extends State<ThirdGridView> {
       body: SingleChildScrollView(
         child: StaggeredGrid.count(
           crossAxisCount: 4,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10,
+          mainAxisSpacing: 5,
+          crossAxisSpacing: 5,
           children: [
             StaggeredGridTile.count(
               crossAxisCellCount: 2,
