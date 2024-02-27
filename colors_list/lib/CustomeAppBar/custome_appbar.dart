@@ -1,9 +1,10 @@
-import 'package:colors_list/CustomeAppBar/custom_tabbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'custom_tabbar.dart';
 
 class CustomeAppbar extends StatelessWidget {
-  const CustomeAppbar({super.key});
+  const CustomeAppbar({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,83 +12,86 @@ class CustomeAppbar extends StatelessWidget {
       initialIndex: 0,
       length: 2,
       child: Scaffold(
-          floatingActionButton: FloatingActionButton(
-              child: const Icon(Icons.navigate_next_outlined),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const CustomTabBar()));
-              }),
-          appBar: AppBar(
-            backgroundColor: Colors.black26,
-            title: const Text("Profile Page"),
-            centerTitle: true,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20.0),
-                bottomRight: Radius.circular(20.0),
-              ),
-            ),
-            leading: const Icon(
-              Icons.menu,
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.navigate_next_outlined),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CustomTabBar()),
+            );
+          },
+        ),
+        appBar: AppBar(
+          backgroundColor: Colors.black26,
+          title: const Text("Profile Page"),
+          centerTitle: true,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20.0),
+              bottomRight: Radius.circular(20.0),
             ),
           ),
-          body: Column(
-            children: [
-              const SizedBox(
-                height: 180,
-                child: Center(
-                  child: Text(
-                    'detail Page',
+          leading: const Icon(Icons.menu),
+        ),
+        body: Column(
+          children: [
+            const SizedBox(
+              height: 180,
+              child: Center(
+                child: Text(
+                  'Detail Page of Body',
+                ),
+              ),
+            ),
+            Container(
+              color: Colors.blue,
+              height: 50,
+              child: const TabBar(
+                indicatorColor: Colors.white,
+                indicatorSize: TabBarIndicatorSize.tab,
+                tabs: [
+                  Tab(
+                    icon: Icon(
+                      Icons.directions_bike,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-              ),
-              Container(
-                color: Colors.blue,
-                height: 50,
-                child: const TabBar(
-                  indicatorColor: Colors.white,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  tabs: [
-                    Tab(
-                      icon: Icon(
-                        Icons.directions_bike,
-                        color: Colors.white,
-                      ),
+                  Tab(
+                    icon: Icon(
+                      Icons.directions_car,
+                      color: Colors.white,
                     ),
-                    Tab(
-                      icon: Icon(
-                        Icons.directions_car,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Expanded(
-                child: TabBarView(children: [
+            ),
+            Expanded(
+              child: TabBarView(
+                children: [
                   Container(
                     color: Colors.red,
                     child: const Center(
-                        child: Text(
-                      "Bike",
-                      style: TextStyle(color: Colors.white),
-                    )),
+                      child: Text(
+                        "Bike",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
                   Container(
                     color: Colors.red,
                     child: const Center(
-                        child: Text(
-                      "car",
-                      style: TextStyle(color: Colors.white),
-                    )),
-                    // height: 220,
+                      child: Text(
+                        "Car",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
-                ]),
-              )
-            ],
-          )),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
