@@ -25,7 +25,8 @@ class StackSeven extends StatelessWidget {
               bottom: 30,
             ),
             child: Container(
-              height: 260,
+              
+              // height: 260,
               decoration: BoxDecoration(
                   color: Colors.white70,
                   borderRadius:
