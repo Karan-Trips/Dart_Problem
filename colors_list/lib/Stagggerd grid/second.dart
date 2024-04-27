@@ -23,10 +23,10 @@ class SecondGridview extends StatelessWidget {
   }
 
   Widget staggeredgridTile(int i) {
-    final bool isEven = i.isEven;
+    final bool even = i.isEven;
 
-    final int cc = isEven ? 2 : 2;
-    final int mc = isEven ? 2 : 1;
+    final int cc = even ? 2 : 2;
+    final int mc = even ? 2 : 1;
 
     return StaggeredGridTile.count(
       crossAxisCellCount: cc,
